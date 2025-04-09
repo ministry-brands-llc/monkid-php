@@ -3,3 +3,5 @@ phpdoc.xml
 phpunit.xml
 doc/
 vendor/
+.phpunit.result.cache
+.DS_Store
