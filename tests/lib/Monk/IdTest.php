@@ -4,7 +4,7 @@ namespace Tests;
 use Tests\Helpers as Helpers;
 use \Monk\Id as Id;
 
-class IdTest extends \PHPUnit_Framework_TestCase
+class IdTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * ::COOKIE_NAME
