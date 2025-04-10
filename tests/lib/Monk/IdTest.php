@@ -39,7 +39,8 @@ class IdTest extends \PHPUnit\Framework\TestCase
     {
         Helpers::loadConfig();
 
-        $this->setExpectedException('\Exception', 'no `app_id` config value');
+        $this->expectException(\Exception::class);
+        $this->expectExceptionMessage('no `app_id` config value');
 
         Id::config('app_id', '');
     }
@@ -76,7 +77,8 @@ class IdTest extends \PHPUnit\Framework\TestCase
 
     public function testLoadConfigWhenPathDoesNotExist()
     {
-        $this->setExpectedException('\Exception', 'no config loaded');
+        $this->expectException(\Exception::class);
+        $this->expectExceptionMessage('no config loaded');
 
         Id::loadConfig('/does/not/exist.ini', Helpers::configEnv());
     }
@@ -105,21 +107,24 @@ class IdTest extends \PHPUnit\Framework\TestCase
 
     public function testLoadConfigWhenEnvironmentDoesNotExist()
     {
-        $this->setExpectedException('\Exception', 'no config loaded');
+        $this->expectException(\Exception::class);
+        $this->expectExceptionMessage('no config loaded');
 
         Id::loadConfig(Helpers::configFilePath(), 'does_not_exist');
     }
 
     public function testLoadConfigWhenConfigIsNotValid()
     {
-        $this->setExpectedException('\Exception', 'no config loaded');
+        $this->expectException(\Exception::class);
+        $this->expectExceptionMessage('no config loaded');
 
         Id::loadConfig(TESTS_CONFIG_PATH . DS . 'monkIdInvalid.ini', Helpers::configEnv());
     }
 
     public function testLoadConfigWhenRequiredValueIsNotSet()
     {
-        $this->setExpectedException('\Exception', 'no `app_secret` config value');
+        $this->expectException(\Exception::class);
+        $this->expectExceptionMessage('no `app_secret` config value');
 
         Id::loadConfig(Helpers::configFileAltPath(), 'required');
     }
