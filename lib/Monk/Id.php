@@ -73,7 +73,7 @@ class Id
      * @return true If valid.
      * @throws \Exception If invalid.
      */
-    private static function verifyConfig(array $config = null)
+    private static function verifyConfig(?array $config = null)
     {
         if (!$config) {
             throw new \Exception('no config loaded');
