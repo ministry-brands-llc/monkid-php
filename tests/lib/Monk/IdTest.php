@@ -155,6 +155,7 @@ class IdTest extends \PHPUnit\Framework\TestCase
         $_COOKIE[Id::COOKIE_NAME] = Helpers::validPayload();
 
         $this->assertEquals(Id::loadPayload(null), Helpers::expectedPayload());
+        unset($_COOKIE[Id::COOKIE_NAME]);
     }
 
     public function testLoadPayloadWhenCannotBeDecoded()
