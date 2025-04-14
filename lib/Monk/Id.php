@@ -4,6 +4,8 @@
  */
 namespace Monk;
 
+use Exception;
+
 /**
  * Integrate Monk ID authentication and single sign-on for apps and websites
  * on the server-side.
@@ -76,11 +78,11 @@ class Id
     private static function verifyConfig(?array $config = null)
     {
         if (!$config) {
-            throw new \Exception('no config loaded');
+            throw new Exception('no config loaded');
         } elseif (!$config['app_id']) {
-            throw new \Exception('no `app_id` config value');
+            throw new Exception('no `app_id` config value');
         } elseif (!$config['app_secret']) {
-            throw new \Exception('no `app_secret` config value');
+            throw new Exception('no `app_secret` config value');
         }
 
         return true;
@@ -149,7 +151,7 @@ class Id
         $decodedPayload = json_decode(base64_decode($encodedPayload), true);
 
         if (!$decodedPayload) {
-            throw new \Exception('failed to decode payload');
+            throw new Exception('failed to decode payload');
         }
 
         return $decodedPayload;
