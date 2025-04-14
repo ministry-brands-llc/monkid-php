@@ -24,7 +24,6 @@
     "php": ">=5.3.0"
   },
   "require-dev": {
-    "phpdocumentor/phpdocumentor": "~3.0.0",
     "phploc/phploc": "7.0.2",
     "phpmd/phpmd": "~2.15.0",
     "phpunit/phpunit": "~9.6.22",
