@@ -61,6 +61,9 @@ class Id
         $environment = $environment ? $environment : 'development';
 
         $config = parse_ini_file($path, true);
+        if (!isset($config[$environment])) {
+            throw new \Exception("no config loaded");
+        }
         $config = $config[$environment];
 
         self::verifyConfig($config);
