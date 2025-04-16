@@ -28,17 +28,17 @@
     "phpunit/phpunit": "~12.1.2",
     "php-coveralls/php-coveralls":"~2.7.0",
     "johnatas-x/phpcpd": "~6.0.5",
-    "squizlabs/php_codesniffer": "~3.12.1"
+    "squizlabs/php_codesniffer": "~3.12.2"
   },
   "scripts": {
     "phpcpd": "phpcpd lib/",
     "phpcs": "phpcs --standard=PSR2 lib/ tests/",
-    "phpdoc": "phpdoc",
+    "phpdoc": "php phpDocumentor.phar --setting=graphs.enabled=true",
     "phplint": "php -l lib/**/*",
     "phploc": "php phploc.phar lib/",
     "phpmd": "phpmd lib/ text cleancode,codesize,controversial,design,naming,unusedcode",
     "quality": ["@phplint", "@phpcs", "@phpcpd", "@phploc", "@phpmd", "@security-checker"],
-    "security-checker": "security-checker security:check",
+    "security-checker": "composer audit",
     "test": "phpunit"
   },
   "config": {
