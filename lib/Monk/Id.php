@@ -60,9 +60,12 @@ class Id
         $environment = $environment ? $environment : getenv('MONK_ID_ENV');
         $environment = $environment ? $environment : 'development';
 
+        if (!file_exists($path)) {
+            throw new Exception("no config loaded");
+        }
         $config = parse_ini_file($path, true);
         if (!isset($config[$environment])) {
-            throw new \Exception("no config loaded");
+            throw new Exception("no config loaded");
         }
         $config = $config[$environment];
 
@@ -84,7 +87,7 @@ class Id
             throw new Exception('no config loaded');
         } elseif (!$config['app_id']) {
             throw new Exception('no `app_id` config value');
-        } elseif (!$config['app_secret']) {
+        } elseif (!array_key_exists('app_secret', $config)) {
             throw new Exception('no `app_secret` config value');
         }
 
