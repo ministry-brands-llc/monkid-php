@@ -7,7 +7,7 @@ use ReflectionClass;
 
 class IdTest extends \PHPUnit\Framework\TestCase
 {
-    
+
     public function tearDown(): void
     {
         $refClass = new ReflectionClass(Id::class);
@@ -168,7 +168,7 @@ class IdTest extends \PHPUnit\Framework\TestCase
         $_COOKIE[Id::COOKIE_NAME] = Helpers::validPayload();
 
         $this->assertEquals(Id::loadPayload(null), Helpers::expectedPayload());
-        unset($_COOKIE[Id::COOKIE_NAME]);
+        $_COOKIE[Id::COOKIE_NAME] = null;
     }
 
     public function testLoadPayloadWhenCannotBeDecoded()
