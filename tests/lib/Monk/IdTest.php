@@ -3,9 +3,22 @@ namespace Tests;
 
 use Tests\Helpers as Helpers;
 use \Monk\Id as Id;
+use ReflectionClass;
 
 class IdTest extends \PHPUnit\Framework\TestCase
 {
+    
+    public function tearDown(): void
+    {
+        $refClass = new ReflectionClass(Id::class);
+        $propertyConfig = $refClass->getProperty('config');
+        $propertyConfig->setAccessible(true);
+        $propertyConfig->setValue(null, null);
+        $propertyPayload = $refClass->getProperty('payload');
+        $propertyPayload->setAccessible(true);
+        $propertyPayload->setValue(null, null);
+    }
+
     /**
      * ::COOKIE_NAME
      */
