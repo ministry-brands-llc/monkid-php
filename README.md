@@ -22,7 +22,7 @@ Using [Composer](http://getcomposer.org), add `monkdev/monk-id` to your
 ```json
 {
   "require": {
-    "monkdev/monk-id": "~1.0"
+    "monkdev/monk-id": "~1.1"
   }
 }
 ```
@@ -34,7 +34,7 @@ $ composer update
 Or:
 
 ```bash
-$ composer require monkdev/monk-id:~1.0
+$ composer require monkdev/monk-id:~1.1
 ```
 
 ### Configure
@@ -137,11 +137,11 @@ Each tool can also be run individually:
     `$ composer phplint`
 *   [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer):
     `$ composer phpcs`
-*   [PHP Copy/Paste Detector](https://github.com/sebastianbergmann/phpcpd):
+*   [PHP Copy/Paste Detector](https://github.com/johnatas-x/phpcpd):
     `$ composer phpcpd`
 *   [PHPLOC](https://github.com/sebastianbergmann/phploc): `$ composer phploc`
 *   [PHP Mess Detector](http://phpmd.org): `$ composer phpmd`
-*   [SensioLabs Security Checker](https://github.com/sensiolabs/security-checker):
+*   [Composer Audit](https://getcomposer.org/doc/03-cli.md#audit):
     `$ composer security-checker`
 
 Deployment

@@ -4,6 +4,8 @@
  */
 namespace Monk;
 
+use Exception;
+
 /**
  * Integrate Monk ID authentication and single sign-on for apps and websites
  * on the server-side.
@@ -58,7 +60,13 @@ class Id
         $environment = $environment ? $environment : getenv('MONK_ID_ENV');
         $environment = $environment ? $environment : 'development';
 
+        if (!file_exists($path)) {
+            throw new Exception("no config loaded");
+        }
         $config = parse_ini_file($path, true);
+        if (!isset($config[$environment])) {
+            throw new Exception("no config loaded");
+        }
         $config = $config[$environment];
 
         self::verifyConfig($config);
@@ -73,14 +81,14 @@ class Id
      * @return true If valid.
      * @throws \Exception If invalid.
      */
-    private static function verifyConfig(array $config = null)
+    private static function verifyConfig(?array $config = null)
     {
         if (!$config) {
-            throw new \Exception('no config loaded');
+            throw new Exception('no config loaded');
         } elseif (!$config['app_id']) {
-            throw new \Exception('no `app_id` config value');
-        } elseif (!$config['app_secret']) {
-            throw new \Exception('no `app_secret` config value');
+            throw new Exception('no `app_id` config value');
+        } elseif (!array_key_exists('app_secret', $config)) {
+            throw new Exception('no `app_secret` config value');
         }
 
         return true;
@@ -149,7 +157,7 @@ class Id
         $decodedPayload = json_decode(base64_decode($encodedPayload), true);
 
         if (!$decodedPayload) {
-            throw new \Exception('failed to decode payload');
+            throw new Exception('failed to decode payload');
         }
 
         return $decodedPayload;
