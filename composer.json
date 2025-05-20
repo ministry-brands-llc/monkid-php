@@ -3,7 +3,7 @@
   "description": "Integrate Monk ID authentication and single sign-on for apps and websites on the server-side.",
   "type": "library",
   "keywords": ["monk", "monkdev", "monkid", "id", "login", "logout", "signin", "signout", "signup"],
-  "homepage": "https://github.com/MonkDev/monk-id-php",
+  "homepage": "https://dev.azure.com/ministrybrands/1ES/_git/DE-monk-id-php",
   "license": "MIT",
   "authors": [
     {
