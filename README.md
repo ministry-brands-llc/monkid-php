@@ -45,6 +45,11 @@ You must be authenticated to access the private repository.
 ```bash
 composer install
 ```
+Or:
+
+```bash
+composer require monkdev/monk-id:~1.2.0
+```
 ### Option 2: Install via SSH + SSH Key
 
 #### 1. Ensure your SSH key is created and added to Azure DevOps
@@ -58,7 +63,7 @@ composer install
         }
     ],
     "require": {
-        "monkdev/mcms-interactive-note-php": "~1.2.0"
+        "monkdev/monk-id": "~1.2.0"
     }
 }
 ```
@@ -66,7 +71,11 @@ composer install
 ```bash
 composer install
 ```
+Or:
 
+```bash
+composer require monkdev/monk-id:~1.2.0
+```
 ### Configure
 
 Configuration is done in an external INI file. There's a sample file in this
