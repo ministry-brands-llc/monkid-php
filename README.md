@@ -14,29 +14,68 @@ server-side.
 Overview
 --------
 
-### Install
+### Installation via Composer
 
-Using [Composer](http://getcomposer.org), add `monkdev/monk-id` to your
-`composer.json`:
+This package is hosted in a private Azure DevOps Git repository.
 
+You can install this private Composer package from Azure DevOps using either:
+- HTTPS with a Personal Access Token (PAT), or
+- SSH with an SSH key
+
+### Option 1: Install via HTTPS + Personal Access Token (PAT)
+
+#### 1. Add the repository to your composer.json:
 ```json
 {
-  "require": {
-    "monkdev/monk-id": "~1.1"
-  }
+    "repositories": [
+        {
+        "type": "vcs",
+        "url": "https://dev.azure.com/ministrybrands/1ES/_git/DE-monk-id-php"
+        }
+    ],
+    "require": {
+        "monkdev/monk-id": "~1.2.0"
+    }
 }
 ```
+#### 2. Authenticate to Azure DevOps
+You must be authenticated to access the private repository.
 
+#### 3. Install the package
 ```bash
-$ composer update
+composer install
 ```
-
 Or:
 
 ```bash
-$ composer require monkdev/monk-id:~1.1
+composer require monkdev/monk-id:~1.2.0
 ```
+### Option 2: Install via SSH + SSH Key
 
+#### 1. Ensure your SSH key is created and added to Azure DevOps
+#### 2. Add the repository to your composer.json using the SSH URL:
+```json
+{
+    "repositories": [
+        {
+        "type": "vcs",
+        "url": "git@ssh.dev.azure.com:v3/ministrybrands/1ES/DE-monk-id-php"
+        }
+    ],
+    "require": {
+        "monkdev/monk-id": "~1.2.0"
+    }
+}
+```
+#### 3. Install the package
+```bash
+composer install
+```
+Or:
+
+```bash
+composer require monkdev/monk-id:~1.2.0
+```
 ### Configure
 
 Configuration is done in an external INI file. There's a sample file in this
