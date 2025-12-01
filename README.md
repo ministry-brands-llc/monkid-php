@@ -16,9 +16,9 @@ Overview
 
 ### Installation via Composer
 
-This package is hosted in a private Azure DevOps Git repository.
+This package is hosted in a private GitHub repository.
 
-You can install this private Composer package from Azure DevOps using either:
+You can install this private Composer package from GitHub using either:
 - HTTPS with a Personal Access Token (PAT), or
 - SSH with an SSH key
 
@@ -30,15 +30,15 @@ You can install this private Composer package from Azure DevOps using either:
     "repositories": [
         {
         "type": "vcs",
-        "url": "https://dev.azure.com/ministrybrands/1ES/_git/DE-monk-id-php"
+        "url": "https://github.com/ministry-brands-llc/monkid-php"
         }
     ],
     "require": {
-        "monkdev/monk-id": "~1.2.0"
+        "monkdev/monk-id": "^2.0"
     }
 }
 ```
-#### 2. Authenticate to Azure DevOps
+#### 2. Authenticate to GitHub
 You must be authenticated to access the private repository.
 
 #### 3. Install the package
@@ -48,22 +48,22 @@ composer install
 Or:
 
 ```bash
-composer require monkdev/monk-id:~1.2.0
+composer require monkdev/monk-id:^2.0
 ```
 ### Option 2: Install via SSH + SSH Key
 
-#### 1. Ensure your SSH key is created and added to Azure DevOps
+#### 1. Ensure your SSH key is created and added to GitHub
 #### 2. Add the repository to your composer.json using the SSH URL:
 ```json
 {
     "repositories": [
         {
         "type": "vcs",
-        "url": "git@ssh.dev.azure.com:v3/ministrybrands/1ES/DE-monk-id-php"
+        "url": "git@github.com:ministry-brands-llc/monkid-php.git"
         }
     ],
     "require": {
-        "monkdev/monk-id": "~1.2.0"
+        "monkdev/monk-id": "^2.0"
     }
 }
 ```
@@ -74,7 +74,7 @@ composer install
 Or:
 
 ```bash
-composer require monkdev/monk-id:~1.2.0
+composer require monkdev/monk-id:^2.0
 ```
 ### Configure
 
