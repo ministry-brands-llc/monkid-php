@@ -174,7 +174,7 @@ Each tool can also be run individually:
 
 *   [php -l](http://www.php.net/manual/en/function.php-check-syntax.php):
     `$ composer phplint`
-*   [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer):
+*   [PHP_CodeSniffer](https://github.com/PHPCSStandards/PHP_CodeSniffer):
     `$ composer phpcs`
 *   [PHP Copy/Paste Detector](https://github.com/johnatas-x/phpcpd):
     `$ composer phpcpd`
